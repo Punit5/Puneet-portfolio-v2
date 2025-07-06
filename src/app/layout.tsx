@@ -20,6 +20,15 @@ export const metadata: Metadata = {
   authors: [{ name: "Puneet Dimri" }],
   creator: "Puneet Dimri",
   metadataBase: new URL("https://puneetdimri.dev"),
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
+      { url: '/favicon.png', sizes: '32x32', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/favicon.png', sizes: '180x180', type: 'image/png' }
+    ]
+  },
   openGraph: {
     title: "Puneet Dimri - Senior Software Developer",
     description: "Senior Software Developer with 8+ years of experience in Java, Spring Boot, AWS, and cloud migration.",

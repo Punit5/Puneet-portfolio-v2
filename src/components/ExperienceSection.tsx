@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Calendar, MapPin, Award, Code, Cloud, Database, Server } from 'lucide-react'
+import { Calendar, MapPin, Award, Shield, Smartphone, Building2, TrendingUp } from 'lucide-react'
 
 const ExperienceSection = () => {
   const experiences = [
@@ -17,7 +17,7 @@ const ExperienceSection = () => {
         'Designed and executed unit tests to ensure the reliability and performance of the backend services'
       ],
       technologies: ['Java', 'React', 'PostgreSQL', 'BigQuery', 'GCP'],
-      icon: Code,
+      icon: Shield,
       color: 'emerald'
     },
     {
@@ -32,7 +32,7 @@ const ExperienceSection = () => {
         'Achieved Microsoft Azure Fundamentals Certification'
       ],
       technologies: ['Java', 'Spring Boot', 'Docker', 'AWS', 'Azure', 'EKS'],
-      icon: Cloud,
+      icon: Smartphone,
       color: 'blue'
     },
     {
@@ -47,7 +47,7 @@ const ExperienceSection = () => {
         'Streamlined deployment process using Ansible and AWS EC2 instances'
       ],
       technologies: ['Java', 'REST API', 'AWS', 'Ansible', 'Redis'],
-      icon: Server,
+      icon: Building2,
       color: 'purple'
     },
     {
@@ -62,7 +62,7 @@ const ExperienceSection = () => {
         'Migrated product to Spring Boot and added unit test cases'
       ],
       technologies: ['Java', 'Spring Boot', 'PL/SQL', 'JSP', 'HTML'],
-      icon: Database,
+      icon: TrendingUp,
       color: 'orange'
     }
   ]
@@ -108,6 +108,16 @@ const ExperienceSection = () => {
     return colors[color as keyof typeof colors] || colors.emerald
   }
 
+  const getTextColorClasses = (color: string) => {
+    const colors = {
+      emerald: 'text-emerald-400',
+      blue: 'text-blue-400',
+      purple: 'text-purple-400',
+      orange: 'text-orange-400'
+    }
+    return colors[color as keyof typeof colors] || colors.emerald
+  }
+
   return (
     <div className="py-20 bg-slate-800 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800"></div>
@@ -128,7 +138,7 @@ const ExperienceSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <div className="relative">
-              <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-400 via-blue-400 to-purple-400"></div>
+              <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-400 via-blue-400 to-purple-400"></div>
               
               <div className="space-y-12">
                 {experiences.map((exp, index) => (
@@ -139,15 +149,14 @@ const ExperienceSection = () => {
                     transition={{ delay: index * 0.2, duration: 0.6 }}
                     className="relative flex items-start"
                   >
-                    <div className={`absolute left-0 w-12 h-12 rounded-full ${getColorClasses(exp.color)} flex items-center justify-center border-4 border-slate-800`}>
-                      <exp.icon className="w-6 h-6 text-white" />
+                    <div className={`absolute left-0 w-6 h-6 rounded-full ${getColorClasses(exp.color)} border-2 border-slate-800`}>
                     </div>
                     
-                    <div className="ml-20 bg-slate-700/50 backdrop-blur-sm rounded-lg p-6 border border-slate-600/30 hover:border-emerald-400/50 transition-all duration-300 flex-1">
+                    <div className="ml-12 bg-slate-700/50 backdrop-blur-sm rounded-lg p-6 border border-slate-600/30 hover:border-emerald-400/50 transition-all duration-300 flex-1">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
                         <div>
                           <h3 className="text-xl font-bold text-white mb-1">{exp.role}</h3>
-                          <h4 className="text-lg font-semibold text-emerald-400">{exp.company}</h4>
+                          <h4 className={`text-lg font-semibold ${getTextColorClasses(exp.color)}`}>{exp.company}</h4>
                         </div>
                         <div className="text-right mt-2 sm:mt-0">
                           <div className="flex items-center text-gray-400 mb-1">
