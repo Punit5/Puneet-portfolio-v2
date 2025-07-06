@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { Calendar, Clock, ArrowRight, Tag, Search, Filter } from 'lucide-react'
 import { useTheme } from '@/context/ThemeContext'
+import Image from 'next/image'
 
 interface BlogPost {
   id: number
@@ -213,9 +214,11 @@ const BlogSection = () => {
               } backdrop-blur-sm rounded-lg overflow-hidden border transition-all duration-300 shadow-lg hover:shadow-xl`}
             >
               <div className="relative overflow-hidden">
-                <img
+                <Image
                   src={post.image}
                   alt={post.title}
+                  width={400}
+                  height={192}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">

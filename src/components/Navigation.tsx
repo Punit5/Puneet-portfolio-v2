@@ -2,7 +2,7 @@
 
 import { motion, useScroll } from 'framer-motion'
 import { useState, useEffect, useMemo } from 'react'
-import { Menu, X, Moon, Sun, Download, Github, Linkedin, Mail } from 'lucide-react'
+import { Menu, X, Download, Github, Linkedin, Mail } from 'lucide-react'
 
 const Navigation = () => {
   const theme = 'dark'

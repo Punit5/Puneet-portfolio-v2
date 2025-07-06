@@ -1,20 +1,21 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react'
+import Image from 'next/image'
 
 const HeroSection = () => {
   const [currentPhrase, setCurrentPhrase] = useState(0)
   const [displayedText, setDisplayedText] = useState('')
   const [isTyping, setIsTyping] = useState(true)
   
-  const phrases = [
+  const phrases = useMemo(() => [
     'Senior Software Engineer',
     'Enterprise Architecture Specialist',
     'Cloud Solutions Architect',
     'Backend Systems Engineer'
-  ]
+  ], [])
 
   useEffect(() => {
     const currentText = phrases[currentPhrase]
@@ -94,10 +95,13 @@ const HeroSection = () => {
                       {/* Elegant Photo Border */}
                       <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/60 via-slate-400/40 to-blue-400/60 rounded-xl p-1">
                         <div className="w-full h-full rounded-xl overflow-hidden bg-slate-900">
-                          <img
+                          <Image
                             src="/puneet_image.jpeg"
                             alt="Puneet Dimri - Senior Software Engineer"
+                            width={384}
+                            height={384}
                             className="w-full h-full object-cover"
+                            priority
                           />
                         </div>
                       </div>
