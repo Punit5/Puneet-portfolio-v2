@@ -239,7 +239,7 @@ const HeroSection = () => {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="/PuneetDimriResume.pdf"
+                href="/Resume_pdf.pdf"
                 download
                 className="bg-transparent border-2 border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2"
               >

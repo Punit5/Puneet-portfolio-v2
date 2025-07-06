@@ -149,7 +149,7 @@ const Navigation = () => {
             <div className="hidden md:flex items-center space-x-4">
               {/* Download Resume */}
               <motion.a
-                href="/PuneetDimriResume.pdf"
+                href="/Resume_pdf.pdf"
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -206,7 +206,7 @@ const Navigation = () => {
             {/* Mobile Actions */}
             <div className="pt-4 space-y-4">
               <motion.a
-                href="/PuneetDimriResume.pdf"
+                href="/Resume_pdf.pdf"
                 download
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
